@@ -15,7 +15,8 @@ while heildarlykkja=="já":
     print("-----------------------------------")
     adgerd=int(input("Sláðu inn númer aðgerðar: "))
     print("-----------------------------------")
-#Liður 1
+#Liður 1-Vytautas
+    #athuga hvort notandi valdi 1
     if adgerd == 1:
         print("Þú valdir bílar")
         hvemikidfolk = int(input("Hvað eru margir skráðir í ferðina? "))
@@ -27,7 +28,56 @@ while heildarlykkja=="já":
             print("Fjöldi bíla sem þarf:",hvemargirbilar)
             if hvemargireftir > 0:
                 print("Fjöldi í síðasta bílnum:",hvemargireftir)
-#Liður 4
+#Liður 2 - Fannar
+    #Athuga hvort notandi valdi 2
+    elif adgerd==2:
+        #Læt notanda vita hvað hann valdi
+        print("Þú valdir Samlagning")
+        #Læt notanda vita hvernig á að hætta í samlagningu
+        print("Veldu 0 til að hætta í Samlagningu")
+        #bið notanda um heiltölu
+        ntala=int(input("Sláðu inn heiltölu: "))
+        #bý til ntalasumma og geri breytuna að 0 fyrir reikninga í forlykkjum
+        ntalasumma=0
+        #athuga ef notandi valdi 0
+        if ntala==0:
+            #ef notandi valdi 0 þá læt ég notanda vita að hann hætti
+            print("Þú hættir í Samlagningu")
+        #athuga ef notandi valdi jákvæða tölu
+        elif ntala>0:
+            #geri lykkju sem telur frá 1 til ntala+1 svo ntala sé innifalin
+            #byrja á 1 til að forritið prentar rétt
+            for x in range(1,ntala+1):
+                #athuga ef x er ntala
+                if x!=ntala:
+                    #prenta tölurnar í réttri röð upp að ntala
+                    print(str(x)+"+",end="")
+                #else keyrir þegar kemur að ntala
+                else:
+                    #prenta x sem er ntala og losa mig við plúsinn
+                    print(x,end=" ")
+                #bæti x við ntalasumma til að geta sýnt summu allra talna frá 1 upp í ntala
+                ntalasumma=ntalasumma+x
+            #prenta summu allra talna frá 1 til ntala, ntala meðfalin
+            print("Gefur töluna:",ntalasumma)
+        #athuga ef ntala er neikvæð
+        elif ntala<0:
+            #byrja lykkju sem telur frá ntala til 0 því ntala er minni en 0
+            for x in range(ntala,0):
+                #athuga ef x er -1 því -1 mun alltaf vera síðasta talan
+                if x != -1:
+                    #prenta tölurnar í réttri röð upp að -1
+                    print("("+str(x)+")+", end="")
+                #else keyrir þegar x er -1
+                else:
+                    #prenta x sem er -1 og losa mig við plúsinn
+                    print("("+str(x)+")", end=" ")
+                #bæti x við ntalasumma til að geta sýnt summa allra talna frá ntala upp í 0
+                ntalasumma = ntalasumma + x
+            #prenta summu allra talna frá ntala upp í 0
+            print("Gefur töluna:",ntalasumma)
+#Liður 4-Vytautas
+    #athuga hvort notandi valdi 4
     if adgerd == 4:
         print("Þú valdir strengur")
         strengur = input("Sláðu inn texta: ")
@@ -37,7 +87,16 @@ while heildarlykkja=="já":
                 if stafur not in stafalisti:
                     strengur = strengur.replace(stafur, "*")
         print("Nýji textinn: ", strengur)
-#Liður 6
+#Liður 6-Vytautas
+    #athuga hvort notandi valdi 6
     if adgerd == 6:
         print("fokkajú")
+#Liður 8-Fannar
+    #athuga hvort notandi valdi 8
+    elif adgerd==8:
+        #læt notandi vita hann hætti
+        print("Þú hættir í forritinu")
+        #einfalt break til að hætta þar sem að breyta heildarlykkja er ónauðsynlegt
+        #í þessu tilfelli
+        break
 
