@@ -1,0 +1,16 @@
+#Hópverkefni FOR1TÖ05AU
+#Fannar Hrafn Haraldsson, Vytautas Sipavicius
+heildarlykkja="já"
+while heildarlykkja=="já":
+    print("-----------------------------------")
+    print("1. Bílar")
+    print("2. Samlagning")
+    print("3. Skæri, blað, steinn")
+    print("4. strengur")
+    print("5. Heiltölur")
+    print("6. Teningaspilið Craps")
+    print("7. Teningakast")
+    print("8. Hætta")
+    print("-----------------------------------")
+    adgerd=input("Sláðu inn númer aðgerðar: ")
+    print("-----------------------------------")
