@@ -1,5 +1,6 @@
 #Hópverkefni FOR1TÖ05AU
 #Fannar Hrafn Haraldsson, Vytautas Sipavicius
+from random import *
 heildarlykkja="já"
 while heildarlykkja=="já":
     print("-----------------------------------")
@@ -12,5 +13,31 @@ while heildarlykkja=="já":
     print("7. Teningakast")
     print("8. Hætta")
     print("-----------------------------------")
-    adgerd=input("Sláðu inn númer aðgerðar: ")
+    adgerd=int(input("Sláðu inn númer aðgerðar: "))
     print("-----------------------------------")
+#Liður 1
+    if adgerd == 1:
+        print("Þú valdir bílar")
+        hvemikidfolk = int(input("Hvað eru margir skráðir í ferðina? "))
+        if hvemikidfolk < 5:
+            print("það eru því miður ekki nógu margir skráðir í ferðina og því er hætt við ferðina")
+        else:
+            hvemargirbilar = int(hvemikidfolk / 5)
+            hvemargireftir = hvemikidfolk % 5
+            print("Fjöldi bíla sem þarf:",hvemargirbilar)
+            if hvemargireftir > 0:
+                print("Fjöldi í síðasta bílnum:",hvemargireftir)
+#Liður 4
+    if adgerd == 4:
+        print("Þú valdir strengur")
+        strengur = input("Sláðu inn texta: ")
+        stafalisti= ["S", "s", "A", "a", "N", "n"]
+        for stafur in strengur:
+            if stafur != " ":
+                if stafur not in stafalisti:
+                    strengur = strengur.replace(stafur, "*")
+        print("Nýji textinn: ", strengur)
+#Liður 6
+    if adgerd == 6:
+        print("fokkajú")
+
