@@ -87,10 +87,38 @@ while heildarlykkja=="já":
                 if stafur not in stafalisti:
                     strengur = strengur.replace(stafur, "*")
         print("Nýji textinn: ", strengur)
-#Liður 6-Vytautas
-    #athuga hvort notandi valdi 6
+#Liður 6
     if adgerd == 6:
-        print("fokkajú")
+        print("Þú valdir Teningapsilið Craps")
+        input("Til að kasta teningum ýttu á enter")
+        crapsteningur1 = randint(1,6)
+        crapsteningur2 = randint (1,6)
+        crapssumma = crapsteningur1 + crapsteningur2
+        print("Þú fékkst",crapsteningur1, "úr fyrsta teningnum")
+        print("Þú fékkst" ,crapsteningur2, "úr seinni teningnum")
+        if crapssumma == 7 or crapssumma == 11:
+            print("Summan úr kastinu þínu er",crapssumma,"og því vinnur þú")
+        elif crapssumma == 2 or crapssumma == 3 or crapssumma == 12:
+            print("Summan úr kastinu þínu er" ,crapssumma, "og því vinnur húsið")
+        else:
+            stigleikmanns = crapssumma
+            vinnurtapar = 1
+            while vinnurtapar == 1:
+                print("Summan úr kastinu þínu er", crapssumma, "og því þarftu að kasta aftur")
+                print("Stigafjöldinn þinn er:", stigleikmanns)
+                input("Til að kasta teningum ýttu á enter")
+                crapsteningur1 = randint(1,6)
+                crapsteningur2 = randint(1,6)
+                print("Þú fékkst",crapsteningur1, "úr fyrsta teningum")
+                print("Þú fékkst" ,crapsteningur2, "úr seinni teningnum")
+                crapssumma = crapsteningur1 + crapsteningur2
+                if crapssumma == 7:
+                    print("Þú fékkst samanlagt 7 úr kastinu og því tapar þú")
+                    vinnurtapar = 2
+                elif crapssumma == stigleikmanns:
+                    print("Þú fékkst",crapssumma,"úr kastinu sem er sama útkomu og stigafjöldinn og því vinnur þú")
+                    vinnurtapar = 2
+
 #Liður 8-Fannar
     #athuga hvort notandi valdi 8
     elif adgerd==8:
