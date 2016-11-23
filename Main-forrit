@@ -15,7 +15,7 @@ while heildarlykkja=="já":
     print("-----------------------------------")
     adgerd=int(input("Sláðu inn númer aðgerðar: "))
     print("-----------------------------------")
-#Liður 1-Vytautas
+    #Liður 1-Vytautas
     #athuga hvort notandi valdi 1
     if adgerd == 1:
         print("Þú valdir bílar")
@@ -28,7 +28,7 @@ while heildarlykkja=="já":
             print("Fjöldi bíla sem þarf:",hvemargirbilar)
             if hvemargireftir > 0:
                 print("Fjöldi í síðasta bílnum:",hvemargireftir)
-#Liður 2 - Fannar
+    #Liður 2 - Fannar
     #Athuga hvort notandi valdi 2
     elif adgerd==2:
         #Læt notanda vita hvað hann valdi
@@ -76,7 +76,141 @@ while heildarlykkja=="já":
                 ntalasumma = ntalasumma + x
             #prenta summu allra talna frá ntala upp í 0
             print("Gefur töluna:",ntalasumma)
-#Liður 4-Vytautas
+    #Liður 3-Fannar
+    #athuga hvort notandi valdi 3
+    elif adgerd==3:
+        # bið notanda um nafn
+        nafn = input("Nafn: ")
+        # Bið notanda um aldur
+        aldur = input("Aldur: ")
+        # það er of leiðinlegt að keppa á móti tölvu
+        print("Dwayne'THE ROCK'Johnson tekur upp áskorun þína")
+        # bý til jafntefli til að reikna hve oft var jafntefli
+        jafntefli = 0
+        # bý til dwaynewins til að reikna hve oft Dwayne'THE ROCK'Johnson vinnur
+        dwaynewins = 0
+        # bý til notdwaynewins til að reikna hve oft spilarinn vinnur
+        notdwaynewins = 0
+        # bý til hveoftvarkeyrt til að reikna hve oft leikurinn var spilaður
+        hveoftvarkeyrt = 0
+        # nota steinnlykkja til að byrja lykkju
+        steinnlykkja = "já"
+        # byrja lykkju fyrir skæri, blað, steinn
+        while steinnlykkja == "já":
+            # geri valmynd
+            print("-----------------------------")
+            print("1. fyrir skæri")
+            print("2. fyrir blað")
+            print("3. fyrir stein")
+            print("4. til að hætta")
+            print("-----------------------------")
+            # spyr notanda hvað hann vill velja
+            adgerd = int(input("Hvað viltu gera?: "))
+            print("-----------------------------")
+            # bæti 1 við hveoftvarkeyrt því það var að vera keyra forritið
+            hveoftvarkeyrt = hveoftvarkeyrt + 1
+            # Dwayne'THE ROCK'Johnson velur skæri, blað, eða stein
+            dwaynejohnson = randint(1, 3)
+            # athuga ef notandi valdi 4
+            if adgerd == 4:
+                # hætti í lykkju ef notandi valdi 4
+                steinnlykkja = "nei"
+            # athuga ef spilari og Dwayne'THE ROCK'Johnson völdu báðir sömu hluti
+            elif adgerd == dwaynejohnson:
+                # ef svo er þá bæti ég einum við teljaran yfir hversu oft var jafntefli
+                jafntefli = jafntefli + 1
+                # prenta niðurstöðu
+                print("Jafntefli!")
+            # athuga ef spilari velur skæri og Dwayne'THE ROCK'Johnson valdi blað
+            elif adgerd == 1 and dwaynejohnson == 2:
+                # bæti einum við teljarann yfir hversu oft spilarinn vann
+                notdwaynewins = notdwaynewins + 1
+                # prenta niðurstöðu
+                print("Dwayne'THE ROCK'Johnson valdi blað")
+                print("Þú vannst!")
+            # athuga ef spilari valdi blað og Dwayne'THE ROCK'Johnson valdi stein
+            elif adgerd == 2 and dwaynejohnson == 3:
+                # bæti einum við teljarann yfir hversu oft spilarinn vann
+                notdwaynewins = notdwaynewins + 1
+                # prenta niðurstöðu
+                print("Dwayne'THE ROCK'Johnson valdi stein")
+                print("Þú vannst!")
+            # athuga ef spilari valdi stein og Dwayne'THE ROCK'Johnson valdi skæri
+            elif adgerd == 3 and dwaynejohnson == 1:
+                # bæti einum við teljarann yfir hversu oft spilarinn vann
+                notdwaynewins = notdwaynewins + 1
+                # prenta niðurstöðu
+                print("Dwayne'THE ROCK'Johnson valdi skæri")
+                print("Þú vannst!")
+            # athuga ef spilari valdi blað og Dwayne'THE ROCK'Johnson valdi skæri
+            elif adgerd == 2 and dwaynejohnson == 1:
+                # bæti einum við teljarann yfir hversu oft Dwayne'THE ROCK'Johnson vann
+                dwaynewins = dwaynewins + 1
+                # prenta niðurstöðu
+                print("Dwayne'THE ROCK'Johnson valdi skæri")
+                print("Þú tapaðir...")
+            # athuga ef spilari valdi stein og Dwayne'THE ROCK'Johnson valdi blað
+            elif adgerd == 3 and dwaynejohnson == 2:
+                # bæti einum við teljarann yfir hversu oft Dwayne'THE ROCK'Johnson vann
+                dwaynewins = dwaynewins + 1
+                # prenta niðurstöðu
+                print("Dwayne'THE ROCK'Johnson valdi blað")
+                print("Þú tapaðir...")
+            # athuga ef spilari valdi skæri og Dwayne'THE ROCK'Johnson valdi stein
+            elif adgerd == 1 and dwaynejohnson == 3:
+                # bæti einum við teljarann yfir hversu oft Dwayne'THE ROCK'Johnson vann
+                dwaynewins = dwaynewins + 1
+                # prenta niðurstöðu
+                print("Dwayne'THE ROCK'Johnson valdi stein")
+                print("Þú tapaðir...")
+            # ef að notandi valdi eitthvað annað en 1/2/3/4
+            else:
+                print("Rangur innsláttur")
+        # prenta hve oft notandi vann
+        #athuga ef var unnið
+        if notdwaynewins==0:
+            #ef ekki var unnið prenta ég þá niðurstöðu
+            print("Þú vannst aldrei")
+        #athuga ef það var bara unnið einu sinni
+        elif notdwaynewins==1:
+            #prenta með sinni í staðinn fyrir sinnum
+            print("Þú vannst:", notdwaynewins, "sinni")
+        #ef það var unnið meira en einu sinni þá keyrir else
+        else:
+            #prenta hve oft notandi vann
+            print("Þú vannst:", notdwaynewins, "sinnum")
+        # prenta hve oft Dwayne'THE ROCK'Johnson vann
+        #athuga ef Dwayne'THE ROCK'Johnson vann
+        if dwaynewins==0:
+            #ef Dwayne'THE ROCK'Johnson vann ekki þá prenta ég þá niðurstöðu
+            print("Dwayne'THE ROCK'Johnson vann aldrei")
+        #athuga ef Dwayne'THE ROCK'Johnson vann bara einu sinni
+        elif dwaynewins==1:
+            #prenta með sinni í staðinn fyrir sinnum
+            print("Dwayne'THE ROCK'Johnson vann",dwaynewins,"sinni")
+        #ef Dwayne'THE ROCK'Johnson vann meira en einu sinni þá keyrir else
+        else:
+            print("Dwayne'THE ROCK'Johnson vann",dwaynewins,"sinnum")
+        # prenta hve oft kom upp jafntefli
+        #athuga ef það var jafntefli
+        if jafntefli==0:
+            #ef það ar aldrei jafntefli þá prenta ég þá niðurstöðu
+            print("Það var aldrei jafntefli")
+        #athuga ef það var bara jafntefli einu sinni
+        elif jafntefli==1:
+            print("Það var jafntefli",jafntefli,"sinni")
+        #ef það var meira en eitt jaftefli þá keyrir else
+        else:
+            print("Það var jafntefli:", jafntefli, "sinnum")
+        #prenta hve oft leikurinn var spilaður
+        #athuga ef leikurinn var bara spilaður einu sinni, i.e. strax hætt í honum
+        if hveoftvarkeyrt==1:
+            print("Þú spilaðir leikinn",hveoftvarkeyrt,"sinni")
+        else:
+            print("Þú spilaðir leikinn",hveoftvarkeyrt,"sinnum")
+        # prenta aldur of nafn notanda
+        print("Og þú heitir:", nafn, " og ert:", aldur, "ára")
+    #Liður 4-Vytautas
     #athuga hvort notandi valdi 4
     if adgerd == 4:
         print("Þú valdir strengur")
@@ -87,7 +221,40 @@ while heildarlykkja=="já":
                 if stafur not in stafalisti:
                     strengur = strengur.replace(stafur, "*")
         print("Nýji textinn: ", strengur)
-#Liður 6
+    #Liður 5-Fannar
+    #athuga hvort notandi valdi 5
+    elif adgerd==5:
+        #Læt notanda vita hann valdi heiltölur
+        print("Þú valdir Heiltölur")
+        #bý til heiltolulisti og geri hann tóman fyrir reikninga
+        heiltolulisti=[]
+        #bý til meðaltalheiltolu og geri 0 fyrir reikninga
+        medaltalheiltolu=0
+        #geri forlykkju sem telur frá 1 til 7 svo ég geti prentað númer hvað talan er í innslátti
+        for x in range(1,8):
+            #bið notanda um tölu
+            print("Sláðu inn tölu #"+str(x)+" af 7",end="")
+            #Bið notanda um stak til að bæta við listan
+            #end á print fyrir ofan þýðir input fer í sömu línu
+            heiltolustak=int(input(": "))
+            #bæti staki notanda við listan
+            heiltolulisti.append(heiltolustak)
+            #bæti staki notanda við medaltalheiltolu fyrir reikninga
+            medaltalheiltolu=medaltalheiltolu+heiltolustak
+        #þar sem medaltalheiltolu er summa talna núna og ég þarf að breyta því
+        #þá færi ég summuna yfir á summaheiltalna
+        summaheiltalna=medaltalheiltolu
+        #reikna meðaltal þeirra
+        medaltalheiltolu=medaltalheiltolu/7
+        #prenta minnstu töluna með min()
+        print("Minnsta talan:",min(heiltolulisti))
+        #prenta stærstu töluna með max()
+        print("Stærsta talan:",max(heiltolulisti))
+        #prenta summuna með summaheiltalna
+        print("Summa talna:",summaheiltalna)
+        #prenta meðaltalið með medtalheiltolu sem ég notaði til að reikna meðaltal fyrr
+        print("Meðaltal talna:",format(medaltalheiltolu, ".2f"))
+    #Liður 6-Vytautas
     if adgerd == 6:
         print("Þú valdir Teningapsilið Craps")
         input("Til að kasta teningum ýttu á enter")
@@ -118,8 +285,41 @@ while heildarlykkja=="já":
                 elif crapssumma == stigleikmanns:
                     print("Þú fékkst",crapssumma,"úr kastinu sem er sama útkomu og stigafjöldinn og því vinnur þú")
                     vinnurtapar = 2
-
-#Liður 8-Fannar
+    #Liður 7-Fannar
+    #athuga hvort notandi valdi 7
+    elif adgerd==7:
+        kastalisti= []
+        summakastlista=0
+        hvemorg7=0
+        hvemorg3=0
+        hvemorg12=0
+        for x in range(1,101):
+            randomteningur1=randint(1,6)
+            randomteningur2=randint(1,6)
+            summateningakasts=randomteningur1+randomteningur2
+            summakastlista=summakastlista+summateningakasts
+            print("Kast teningur 1=",randomteningur1)
+            print("Kast teningur 2=",randomteningur2)
+            print("Samtals",summateningakasts)
+            print("Þessi tala verður sett í listann sem kast",x)
+            baetividkastlista="Kast #"+str(x)+"="+str(summateningakasts)
+            kastalisti.append(baetividkastlista)
+            if summateningakasts==7:
+                hvemorg7=hvemorg7+1
+            if summateningakasts==3:
+                hvemorg3=hvemorg3+1
+            if summateningakasts==12:
+                hvemorg12=hvemorg12+1
+        medaltalkasta=summakastlista/100
+        print("Listinn óraðaður:",kastalisti)
+        kastalisti.sort()
+        print("Listinn raðaður:",kastalisti)
+        print("Heildarsummalista:",summakastlista)
+        print("Meðaltal listans:",format(medaltalkasta, ".2f"))
+        print("Hve oft summa kastana var 7:",hvemorg7)
+        print("Hve oft summa kastana var 3:", hvemorg3)
+        print("Hve oft summa kastana var 12:", hvemorg12)
+    #Liður 8-Fannar
     #athuga hvort notandi valdi 8
     elif adgerd==8:
         #læt notandi vita hann hætti
