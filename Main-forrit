@@ -33,52 +33,55 @@ while heildarlykkja=="já":
     elif adgerd==2:
         #Læt notanda vita hvað hann valdi
         print("Þú valdir Samlagning")
-        #Læt notanda vita hvernig á að hætta í samlagningu
-        print("Veldu 0 til að hætta í Samlagningu")
-        #bið notanda um heiltölu
-        ntala=int(input("Sláðu inn heiltölu: "))
-        #bý til ntalasumma og geri breytuna að 0 fyrir reikninga í forlykkjum
-        ntalasumma=0
-        #athuga ef notandi valdi 0
-        if ntala==0:
-            #ef notandi valdi 0 þá læt ég notanda vita að hann hætti
-            print("Þú hættir í Samlagningu")
-        #athuga ef notandi valdi jákvæða tölu
-        elif ntala>0:
-            #geri lykkju sem telur frá 1 til ntala+1 svo ntala sé innifalin
-            #byrja á 1 til að forritið prentar rétt
-            for x in range(1,ntala+1):
-                #athuga ef x er ntala
-                if x!=ntala:
-                    #prenta tölurnar í réttri röð upp að ntala
-                    print(str(x)+"+",end="")
-                #else keyrir þegar kemur að ntala
-                else:
-                    #prenta x sem er ntala og losa mig við plúsinn
-                    print(x,end=" ")
-                #bæti x við ntalasumma til að geta sýnt summu allra talna frá 1 upp í ntala
-                ntalasumma=ntalasumma+x
-            #prenta summu allra talna frá 1 til ntala, ntala meðfalin
-            print("Gefur töluna:",ntalasumma)
-        #athuga ef ntala er neikvæð
-        elif ntala<0:
-            #byrja lykkju sem telur frá ntala til 0 því ntala er minni en 0
-            for x in range(ntala,0):
-                #athuga ef x er -1 því -1 mun alltaf vera síðasta talan
-                if x != -1:
-                    #prenta tölurnar í réttri röð upp að -1
-                    print("("+str(x)+")+", end="")
-                #else keyrir þegar x er -1
-                else:
-                    #prenta x sem er -1 og losa mig við plúsinn
-                    print("("+str(x)+")", end=" ")
-                #bæti x við ntalasumma til að geta sýnt summa allra talna frá ntala upp í 0
-                ntalasumma = ntalasumma + x
-            #prenta summu allra talna frá ntala upp í 0
-            print("Gefur töluna:",ntalasumma)
+        samlagninglykkja="já"
+        while samlagninglykkja=="já":
+            #Læt notanda vita hvernig á að hætta í samlagningu
+            print("Veldu 0 til að hætta í Samlagningu")
+            #bið notanda um heiltölu
+            ntala=int(input("Sláðu inn heiltölu: "))
+            #bý til ntalasumma og geri breytuna að 0 fyrir reikninga í forlykkjum
+            ntalasumma=0
+            #athuga ef notandi valdi 0
+            if ntala==0:
+                #ef notandi valdi 0 þá læt ég notanda vita að hann hætti
+                print("Þú hættir í Samlagningu")
+                samlagninglykkja="nei"
+            #athuga ef notandi valdi jákvæða tölu
+            elif ntala>0:
+                #geri lykkju sem telur frá 1 til ntala+1 svo ntala sé innifalin
+                #byrja á 1 til að forritið prentar rétt
+                for x in range(1,ntala+1):
+                    #athuga ef x er ntala
+                    if x!=ntala:
+                        #prenta tölurnar í réttri röð upp að ntala
+                        print(str(x)+"+",end="")
+                    #else keyrir þegar kemur að ntala
+                    else:
+                        #prenta x sem er ntala og losa mig við plúsinn
+                        print(x,end=" ")
+                    #bæti x við ntalasumma til að geta sýnt summu allra talna frá 1 upp í ntala
+                    ntalasumma=ntalasumma+x
+                #prenta summu allra talna frá 1 til ntala, ntala meðfalin
+                print("Gefur töluna:",ntalasumma)
+            #athuga ef ntala er neikvæð
+            elif ntala<0:
+                #byrja lykkju sem telur frá ntala til 0 því ntala er minni en 0
+                for x in range(ntala,0):
+                    #athuga ef x er -1 því -1 mun alltaf vera síðasta talan
+                    if x != -1:
+                        #prenta tölurnar í réttri röð upp að -1
+                        print("("+str(x)+")+", end="")
+                    #else keyrir þegar x er -1
+                    else:
+                        #prenta x sem er -1 og losa mig við plúsinn
+                        print("("+str(x)+")", end=" ")
+                    #bæti x við ntalasumma til að geta sýnt summa allra talna frá ntala upp í 0
+                    ntalasumma = ntalasumma + x
+                #prenta summu allra talna frá ntala upp í 0
+                print("Gefur töluna:",ntalasumma)
     #Liður 3-Fannar
     #athuga hvort notandi valdi 3
-    elif adgerd==3:
+    elif adgerd == 3 :
         # bið notanda um nafn
         nafn = input("Nafn: ")
         # Bið notanda um aldur
@@ -92,7 +95,7 @@ while heildarlykkja=="já":
         # bý til notdwaynewins til að reikna hve oft spilarinn vinnur
         notdwaynewins = 0
         # bý til hveoftvarkeyrt til að reikna hve oft leikurinn var spilaður
-        hveoftvarkeyrt = 0
+        hveoftvarkeyrt = -1
         # nota steinnlykkja til að byrja lykkju
         steinnlykkja = "já"
         # byrja lykkju fyrir skæri, blað, steinn
@@ -105,59 +108,59 @@ while heildarlykkja=="já":
             print("4. til að hætta")
             print("-----------------------------")
             # spyr notanda hvað hann vill velja
-            adgerd = int(input("Hvað viltu gera?: "))
+            vopn = int(input("Hvað viltu gera?: "))
             print("-----------------------------")
             # bæti 1 við hveoftvarkeyrt því það var að vera keyra forritið
             hveoftvarkeyrt = hveoftvarkeyrt + 1
             # Dwayne'THE ROCK'Johnson velur skæri, blað, eða stein
             dwaynejohnson = randint(1, 3)
             # athuga ef notandi valdi 4
-            if adgerd == 4:
+            if vopn == 4:
                 # hætti í lykkju ef notandi valdi 4
                 steinnlykkja = "nei"
             # athuga ef spilari og Dwayne'THE ROCK'Johnson völdu báðir sömu hluti
-            elif adgerd == dwaynejohnson:
+            elif vopn == dwaynejohnson:
                 # ef svo er þá bæti ég einum við teljaran yfir hversu oft var jafntefli
                 jafntefli = jafntefli + 1
                 # prenta niðurstöðu
                 print("Jafntefli!")
             # athuga ef spilari velur skæri og Dwayne'THE ROCK'Johnson valdi blað
-            elif adgerd == 1 and dwaynejohnson == 2:
+            elif vopn == 1 and dwaynejohnson == 2:
                 # bæti einum við teljarann yfir hversu oft spilarinn vann
                 notdwaynewins = notdwaynewins + 1
                 # prenta niðurstöðu
                 print("Dwayne'THE ROCK'Johnson valdi blað")
                 print("Þú vannst!")
             # athuga ef spilari valdi blað og Dwayne'THE ROCK'Johnson valdi stein
-            elif adgerd == 2 and dwaynejohnson == 3:
+            elif vopn == 2 and dwaynejohnson == 3:
                 # bæti einum við teljarann yfir hversu oft spilarinn vann
                 notdwaynewins = notdwaynewins + 1
                 # prenta niðurstöðu
                 print("Dwayne'THE ROCK'Johnson valdi stein")
                 print("Þú vannst!")
             # athuga ef spilari valdi stein og Dwayne'THE ROCK'Johnson valdi skæri
-            elif adgerd == 3 and dwaynejohnson == 1:
+            elif vopn == 3 and dwaynejohnson == 1:
                 # bæti einum við teljarann yfir hversu oft spilarinn vann
                 notdwaynewins = notdwaynewins + 1
                 # prenta niðurstöðu
                 print("Dwayne'THE ROCK'Johnson valdi skæri")
                 print("Þú vannst!")
             # athuga ef spilari valdi blað og Dwayne'THE ROCK'Johnson valdi skæri
-            elif adgerd == 2 and dwaynejohnson == 1:
+            elif vopn == 2 and dwaynejohnson == 1:
                 # bæti einum við teljarann yfir hversu oft Dwayne'THE ROCK'Johnson vann
                 dwaynewins = dwaynewins + 1
                 # prenta niðurstöðu
                 print("Dwayne'THE ROCK'Johnson valdi skæri")
                 print("Þú tapaðir...")
             # athuga ef spilari valdi stein og Dwayne'THE ROCK'Johnson valdi blað
-            elif adgerd == 3 and dwaynejohnson == 2:
+            elif vopn == 3 and dwaynejohnson == 2:
                 # bæti einum við teljarann yfir hversu oft Dwayne'THE ROCK'Johnson vann
                 dwaynewins = dwaynewins + 1
                 # prenta niðurstöðu
                 print("Dwayne'THE ROCK'Johnson valdi blað")
                 print("Þú tapaðir...")
             # athuga ef spilari valdi skæri og Dwayne'THE ROCK'Johnson valdi stein
-            elif adgerd == 1 and dwaynejohnson == 3:
+            elif vopn == 1 and dwaynejohnson == 3:
                 # bæti einum við teljarann yfir hversu oft Dwayne'THE ROCK'Johnson vann
                 dwaynewins = dwaynewins + 1
                 # prenta niðurstöðu
@@ -203,13 +206,19 @@ while heildarlykkja=="já":
         else:
             print("Það var jafntefli:", jafntefli, "sinnum")
         #prenta hve oft leikurinn var spilaður
-        #athuga ef leikurinn var bara spilaður einu sinni, i.e. strax hætt í honum
-        if hveoftvarkeyrt==1:
+        #athuga hvort það var strax hætt í leiknum
+        if hveoftvarkeyrt==0:
+            #ef svo þá útskýri ég það í staðinn
+            print("Þú hættir strax og því var leikurinn aldrei spilaður")
+        #athuga ef leikurinn var bara spilaður einu sinni
+        elif hveoftvarkeyrt==1:
+            #prenta með sinni í staðinn fyrir sinnum
             print("Þú spilaðir leikinn",hveoftvarkeyrt,"sinni")
+        #ef leikurinn var spilaður oftar en einu sinni þá keyrir else
         else:
             print("Þú spilaðir leikinn",hveoftvarkeyrt,"sinnum")
         # prenta aldur of nafn notanda
-        print("Og þú heitir:", nafn, " og ert:", aldur, "ára")
+        print("Og þú heitir:", nafn, "og ert:", aldur, "ára")
     #Liður 4-Vytautas
     #athuga hvort notandi valdi 4
     if adgerd == 4:
@@ -255,6 +264,7 @@ while heildarlykkja=="já":
         #prenta meðaltalið með medtalheiltolu sem ég notaði til að reikna meðaltal fyrr
         print("Meðaltal talna:",format(medaltalheiltolu, ".2f"))
     #Liður 6-Vytautas
+    #athuga hvort notandi valdi 6
     if adgerd == 6:
         print("Þú valdir Teningapsilið Craps")
         input("Til að kasta teningum ýttu á enter")
@@ -273,7 +283,7 @@ while heildarlykkja=="já":
             while vinnurtapar == 1:
                 print("Summan úr kastinu þínu er", crapssumma, "og því þarftu að kasta aftur")
                 print("Stigafjöldinn þinn er:", stigleikmanns)
-                input("Til að kasta teningum ýttu á enter")
+                input("Til að kasta teningum ýttu á enter ")
                 crapsteningur1 = randint(1,6)
                 crapsteningur2 = randint(1,6)
                 print("Þú fékkst",crapsteningur1, "úr fyrsta teningum")
@@ -288,36 +298,70 @@ while heildarlykkja=="já":
     #Liður 7-Fannar
     #athuga hvort notandi valdi 7
     elif adgerd==7:
+        #læt notanda vita hvað hann valdi
+        print("Þú valdir teningakast")
+        #bý til kastalisti til að geyma summu kasta í seinna
         kastalisti= []
+        #geri summakastlista til að plúsa summu allra kasta saman í
         summakastlista=0
+        #bý til hvemorg7 til að nota sem teljara fyrir hversu oft summa kasts er 7
         hvemorg7=0
+        #bý til hvemorg7 til að nota sem teljara fyrir hversu oft summa kasts er 3
         hvemorg3=0
+        #bý til hvemorg7 til að nota sem teljara fyrir hversu oft summa kasts er 12
         hvemorg12=0
+        #bý til forlykkju sem keyrir hundrað sinnum því ég þarf hundrað köst
+        #byrja á 1 svo að ég geti notað x í print yfir númer hvað kastið er
         for x in range(1,101):
+            #kasta teningi 1 með randint
             randomteningur1=randint(1,6)
+            #kasta teningi 2 með randint
             randomteningur2=randint(1,6)
+            #læt niðurstöður beggja teninga saman í summateningakasts
             summateningakasts=randomteningur1+randomteningur2
+            #bæti summu kastsins summu allra kasta
             summakastlista=summakastlista+summateningakasts
+            #prenta hvað teningur 1 lenti á
             print("Kast teningur 1=",randomteningur1)
+            #prenta hvað teningur 2 lenti á
             print("Kast teningur 2=",randomteningur2)
+            #prenta summu kastins
             print("Samtals",summateningakasts)
+            #prenta númer hvað kastið var
             print("Þessi tala verður sett í listann sem kast",x)
-            baetividkastlista="Kast #"+str(x)+"="+str(summateningakasts)
-            kastalisti.append(baetividkastlista)
+            #línan hjálpar við að lesa úr köstunum
+            print("------------------------------------------")
+            #bæti summu kastsins við lista af öllum kastasummum
+            kastalisti.append(summateningakasts)
+            #athuga hvort summa kastsins var 7
             if summateningakasts==7:
+                #ef svo þá bæti ég einum við teljaran yfir hversu oft summa kastsins var 7
                 hvemorg7=hvemorg7+1
+            #athuga hvort summa kastsins var 3
             if summateningakasts==3:
+                #ef svo þá bæti ég einum við teljaran yfir hversu oft summa kastsins var 3
                 hvemorg3=hvemorg3+1
+            #athuga hvort summa kastsins var 12
             if summateningakasts==12:
+                #ef svo þá bæti ég einum við teljaran yfir hversu oft summa kastsins var 12
                 hvemorg12=hvemorg12+1
+        #reikna meðaltal allra kasta með því að taka summu allra kasta og deila með hversu mörg köstin voru
         medaltalkasta=summakastlista/100
+        #prenta listan yfir summu allra kasta óraðaðan
         print("Listinn óraðaður:",kastalisti)
+        #raða listanum
         kastalisti.sort()
+        #prenta listan yfir summu allra kasta raðaðan
         print("Listinn raðaður:",kastalisti)
+        #prenta summu allra kasta
         print("Heildarsummalista:",summakastlista)
+        #prenta meðaltal allra kasta með tveimur aukastöfum
         print("Meðaltal listans:",format(medaltalkasta, ".2f"))
+        #prenta hversu oft summa kasts var 7
         print("Hve oft summa kastana var 7:",hvemorg7)
+        #prenta hversu oft summa kasts var 3
         print("Hve oft summa kastana var 3:", hvemorg3)
+        #prenta hversu oft summa kasts var 12
         print("Hve oft summa kastana var 12:", hvemorg12)
     #Liður 8-Fannar
     #athuga hvort notandi valdi 8
@@ -327,4 +371,3 @@ while heildarlykkja=="já":
         #einfalt break til að hætta þar sem að breyta heildarlykkja er ónauðsynlegt
         #í þessu tilfelli
         break
-
