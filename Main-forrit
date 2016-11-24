@@ -15,19 +15,28 @@ while heildarlykkja=="já":
     print("-----------------------------------")
     adgerd=int(input("Sláðu inn númer aðgerðar: "))
     print("-----------------------------------")
-    #Liður 1-Vytautas
-    #athuga hvort notandi valdi 1
-    if adgerd == 1:
+    #Liður 1-vytautas
+# athuga hvort notandi valdi 1 og láta hann vita    
+        if adgerd == 1:
         print("Þú valdir bílar")
+#Búa til breytu fyrir hversu margir fara í ferðina
         hvemikidfolk = int(input("Hvað eru margir skráðir í ferðina? "))
+#Tjekka hvort það eru ekki örugglega ekki nógu margir í einn bíl (5)
         if hvemikidfolk < 5:
+#Ef það eru ekki nógu margir í bíl þá láta notendann vita
             print("það eru því miður ekki nógu margir skráðir í ferðina og því er hætt við ferðina")
+#Ef það eru nógu margri í einn bíl þá keyra restina af forritinu
         else:
+#Búa til breytu fyrir hversu marga bíla það þarf
             hvemargirbilar = int(hvemikidfolk / 5)
+#Búa til breytu fyrir hversu margir verða eftir í síðasta bílnum
             hvemargireftir = hvemikidfolk % 5
-            print("Fjöldi bíla sem þarf:",hvemargirbilar)
+#Prenta út fjölda bíla sem þurfti
+            print("Fjöldi bíla sem þarf:", hvemargirbilar)
+#Tjekka hvort það er einhver bíll sem er ekki fullur
             if hvemargireftir > 0:
-                print("Fjöldi í síðasta bílnum:",hvemargireftir)
+#Ef það er einn bíll sem er ekki fullur þá prenta út hversu margir fara í hann
+                print("Fjöldi í síðasta bílnum:", hvemargireftir)
     #Liður 2 - Fannar
     #Athuga hvort notandi valdi 2
     elif adgerd==2:
@@ -168,6 +177,8 @@ while heildarlykkja=="já":
                 print("Þú tapaðir...")
             # ef að notandi valdi eitthvað annað en 1/2/3/4
             else:
+                #draga einn frá hveoftvarkeyrt þar sem leikurinn var ekki spilaður (rangur innsláttur)
+                hveoftvarkeyrt = hveoftvarkeyrt - 1
                 print("Rangur innsláttur")
         # prenta hve oft notandi vann
         #athuga ef var unnið
@@ -220,16 +231,22 @@ while heildarlykkja=="já":
         # prenta aldur of nafn notanda
         print("Og þú heitir:", nafn, "og ert:", aldur, "ára")
     #Liður 4-Vytautas
-    #athuga hvort notandi valdi 4
-    if adgerd == 4:
+#athuga hvort notandi valdi 4 og láta hann vita hvað hann valdi
+    elif adgerd == 4:
         print("Þú valdir strengur")
+#Láta notendann slá inn streng
         strengur = input("Sláðu inn texta: ")
-        stafalisti= ["S", "s", "A", "a", "N", "n"]
+#listi yfir stafi sem á að halda
+        stafalisti = ["S", "s", "A", "a", "N", "n"]
+#skoða hvern staf í strengnum
         for stafur in strengur:
+#ef stafurinn er bil þá fer skoða næsta staf í strengnum
             if stafur != " ":
+#ef stafurinn er ekki í stafalistanum þá skipta stafnum út fyrir *
                 if stafur not in stafalisti:
                     strengur = strengur.replace(stafur, "*")
-        print("Nýji textinn: ", strengur)
+#Prenta út nýja strenginn
+    print("Nýji textinn: ", strengur)
     #Liður 5-Fannar
     #athuga hvort notandi valdi 5
     elif adgerd==5:
@@ -264,36 +281,68 @@ while heildarlykkja=="já":
         #prenta meðaltalið með medtalheiltolu sem ég notaði til að reikna meðaltal fyrr
         print("Meðaltal talna:",format(medaltalheiltolu, ".2f"))
     #Liður 6-Vytautas
-    #athuga hvort notandi valdi 6
-    if adgerd == 6:
+#tjekka hvort notandinn valdi 6 í valmyndinni og láta hann vita hvað hann valdi
+    elif adgerd == 6:
         print("Þú valdir Teningapsilið Craps")
+#Spyrja notendann hvort hann vilji sjá leikreglur
+        leikreglur = input("Fyrir leikreglur sláðu inn (1) eða ýttu á enter til að halda áfram")
+#Ef notandinn valdi að sjá leikreglur þá prenta þær út
+        if leikreglur == 1:
+            print("Leikmaður kastar tveimur teningum. Hvor teningur hefur 6 hliðar.")
+            print("Summan ú kastinu er reiknuð út.")
+            print("Ef summan er 7 eða 11 í fyrsta kasti vinnur leikmaður.")
+            print("Ef summan er 2, 3 eða 12 í fyrsta kasti (craps) tapar leikmaður (Húsið vinnur)")
+            print("Ef summan er 4, 5, 6, 8, 9 eða 10 í fyrsta kasti verður summan stig viðkomandi leikmanns")
+            print("Til að vinna verður leikmaðurinn að kasta þar til hann fær sama fjölda stiga og í fyrsta kasti.")
+            print("Leikmaður tapar ef hann fær 7 áður en hann nær þessum stigum")
+#Óska notendanum góðrar skemmtunar
+        print("Góða skemmtun!")
+#Biðja notendann um að kasta teningum
         input("Til að kasta teningum ýttu á enter")
-        crapsteningur1 = randint(1,6)
-        crapsteningur2 = randint (1,6)
+#Breytur fyrir fyrsta og annnan 6 hliða tening
+        crapsteningur1 = randint(1, 6)
+        crapsteningur2 = randint(1, 6)
+#Reikna summuna úr báðum teningunum
         crapssumma = crapsteningur1 + crapsteningur2
-        print("Þú fékkst",crapsteningur1, "úr fyrsta teningnum")
-        print("Þú fékkst" ,crapsteningur2, "úr seinni teningnum")
+#Láta notendann vita hvað hann fékk úr báðum teningunum kasti
+        print("Þú fékkst", crapsteningur1, "úr fyrsta teningnum")
+        print("Þú fékkst", crapsteningur2, "úr seinni teningnum")
+#Tjekka hvort notandinn vann í fyrsta kasti og ef svo þá láta hann vita
         if crapssumma == 7 or crapssumma == 11:
-            print("Summan úr kastinu þínu er",crapssumma,"og því vinnur þú")
+            print("Summan úr kastinu þínu er", crapssumma, "og því vinnur þú")
+#Tjekka síðan hvort notandinn tapaði í fyrsta kasti og ef svo þá láta hann vita
         elif crapssumma == 2 or crapssumma == 3 or crapssumma == 12:
-            print("Summan úr kastinu þínu er" ,crapssumma, "og því vinnur húsið")
+            print("Summan úr kastinu þínu er", crapssumma, "og því vinnur húsið")
+#Ef útkomann var eitthvað annað þá byrja á næsta lið leiksin
         else:
+#Búa til breytu fyrir stigafjölda leikmanns
             stigleikmanns = crapssumma
+#Búa til breytu til að starta while lykkjunni
             vinnurtapar = 1
             while vinnurtapar == 1:
+#Láta notendann vita hver summan úr kastinu var og láta hann vita að hann þarf að kasta aftur
                 print("Summan úr kastinu þínu er", crapssumma, "og því þarftu að kasta aftur")
+#Minna notendann á stigafjöldann sinn
                 print("Stigafjöldinn þinn er:", stigleikmanns)
-                input("Til að kasta teningum ýttu á enter ")
-                crapsteningur1 = randint(1,6)
-                crapsteningur2 = randint(1,6)
-                print("Þú fékkst",crapsteningur1, "úr fyrsta teningum")
-                print("Þú fékkst" ,crapsteningur2, "úr seinni teningnum")
+#Biðja notendann um að kasta aftur
+                input("Til að kasta teningum ýttu á enter")
+#Breytur fyrir teningana
+                crapsteningur1 = randint(1, 6)
+                crapsteningur2 = randint(1, 6)
+#Láta notendann vita hvað hann fékk úr hverjum tening
+                print("Þú fékkst", crapsteningur1, "úr fyrsta teningum")
+                print("Þú fékkst", crapsteningur2, "úr seinni teningnum")
+#Reikna summuna út úr báðum teningunum
                 crapssumma = crapsteningur1 + crapsteningur2
+#Tjekka hvort notandinn fékk summuna 7 og hvort hann tapi leiknum og láta hann vita
                 if crapssumma == 7:
                     print("Þú fékkst samanlagt 7 úr kastinu og því tapar þú")
+#Breyta breytunni fyrir while lykkjuna til að enda hana þar sem leikurinn er búinn
                     vinnurtapar = 2
+#Tjekka hvort summan úr kastinu sé sú sama og stig notendans og láta hann vita að hann vann leikinn ef svo er
                 elif crapssumma == stigleikmanns:
-                    print("Þú fékkst",crapssumma,"úr kastinu sem er sama útkomu og stigafjöldinn og því vinnur þú")
+                    print("Þú fékkst", crapssumma, "úr kastinu sem er sama útkomu og stigafjöldinn og því vinnur þú")
+# Breyta breytunni fyrir while lykkjuna til að enda hana þar sem leikurinn er búinn
                     vinnurtapar = 2
     #Liður 7-Fannar
     #athuga hvort notandi valdi 7
@@ -371,3 +420,6 @@ while heildarlykkja=="já":
         #einfalt break til að hætta þar sem að breyta heildarlykkja er ónauðsynlegt
         #í þessu tilfelli
         break
+#Tjekka hvort Notandinn sló inn vitlaust í valmyndinni og ef svo biðja hann um að slá inn aftur
+     else:
+        print("Þú slóst vitlaust inn í valmyndinni, vinsamlegast reyndu aftur)
